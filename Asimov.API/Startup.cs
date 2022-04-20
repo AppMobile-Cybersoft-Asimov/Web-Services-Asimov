@@ -1,7 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Asimov.API.Announcements.Domain.Repositories;
 using Asimov.API.Announcements.Domain.Services;
 using Asimov.API.Announcements.Persistence.Repositories;
@@ -98,7 +95,7 @@ namespace Asimov.API
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
+            if (env.IsDevelopment() || env.IsProduction())
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
